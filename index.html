@@ -86,7 +86,21 @@ h1,h2{font-weight:700;letter-spacing:-.01em;line-height:1.18;text-wrap:balance}
 .s2 .youth{display:grid;grid-template-columns:auto 1fr;gap:64px;align-items:end;border-top:2px solid rgba(243,212,138,.35);padding-top:24px}
 .s2 .youth .pre{font-size:32px;font-weight:500;line-height:1.35}
 .s2 .youth .you{font-size:70px;font-weight:800;line-height:1.15;color:var(--gold);margin-top:6px;transform-origin:left center;opacity:0}
-.s2.is-on .youth .you{animation:youin .9s cubic-bezier(.3,1.5,.5,1) both 4.5s,youglow 2.6s ease-in-out 5.6s infinite}
+.s2 .youth.shown .you{animation:youin .9s cubic-bezier(.3,1.5,.5,1) both .5s,youglow 2.6s ease-in-out 1.6s infinite}
+/* click-to-reveal steps (data-step) */
+.slide [data-step]{opacity:0;transform:translateY(26px)}
+.slide.is-on [data-step].shown{animation:rise .8s var(--ease) both}
+.slide [data-step]:not(.shown) .b,.slide [data-step]:not(.shown) .bar,.slide [data-step]:not(.shown) .ring,.slide [data-step]:not(.shown) .one .p{animation:none!important}
+.s2.is-on [data-step].shown .one .p{animation:goldify .8s ease both .9s}
+.s2.is-on [data-step].shown .ring{animation:ping 2.4s ease-out 1.5s infinite}
+.s2 .kick2[data-step]{font-size:30px}
+.s2.only1 .kick2{font-size:52px;line-height:1.3;transition:font-size .6s var(--ease)}
+.s2 .kick2{transition:font-size .6s var(--ease)}
+.s2:not(.only1) .kick2 .en::before{content:" · "}
+.s2.only1 .kick2 .en{display:block;font-size:34px;margin-top:12px}
+.stepdots{position:absolute;left:420px;bottom:49px;display:flex;gap:8px;z-index:3}
+.stepdots b{width:11px;height:11px;border-radius:50%;background:rgba(243,212,138,.25)}
+.stepdots b.on{background:var(--gold)}
 @keyframes youin{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
 @keyframes youglow{0%,100%{text-shadow:0 0 0 rgba(228,176,74,0)}50%{text-shadow:0 0 30px rgba(228,176,74,.7)}}
 .s2 .youth .inv{font-size:32px;font-weight:500;line-height:1.45;border-left:4px solid var(--gold);padding-left:28px}
@@ -279,32 +293,32 @@ h1,h2{font-weight:700;letter-spacing:-.01em;line-height:1.18;text-wrap:balance}
 
   <!-- 2 · WHY NOW -->
   <section class="slide s2" id="s2" aria-label="โจทย์ที่ใหญ่ที่สุดของคนรุ่นคุณ">
-    <div class="b" style="--d:.2s">
-      <p class="kick2">AI และหุ่นยนต์ไม่ได้มาแย่งงาน แต่มาเป็นเพื่อนร่วมงาน<span class="en"> · AI and robots aren't here to take our jobs. They're our new teammates.</span></p>
-      <h2>โจทย์ที่ใหญ่ที่สุดของคนรุ่นคุณ<span class="en">The biggest challenge of your generation.</span></h2>
+    <div>
+      <p class="kick2" data-step="1">AI และหุ่นยนต์ไม่ได้มาแย่งงาน แต่มาเป็นเพื่อนร่วมงาน<span class="en">AI and robots aren't here to take our jobs. They're our new teammates.</span></p>
+      <h2 data-step="2">โจทย์ที่ใหญ่ที่สุดของคนรุ่นคุณ<span class="en">The biggest challenge of your generation.</span></h2>
     </div>
     <div class="cols">
-      <div>
+      <div data-step="3">
         <div class="ppl" role="img" aria-label="คนไทย 1 ใน 5 คน อายุ 60 ปีขึ้นไป">
-          <svg class="b" style="--d:.6s" viewBox="0 0 120 230"><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
-          <svg class="b" style="--d:.75s" viewBox="0 0 120 230"><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
-          <svg class="b" style="--d:.9s" viewBox="0 0 120 230"><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
-          <svg class="b" style="--d:1.05s" viewBox="0 0 120 230"><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
-          <svg class="b one" style="--d:1.2s" viewBox="0 0 120 230"><circle class="ring" cx="60" cy="130" r="80"/><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
+          <svg class="b" style="--d:.1s" viewBox="0 0 120 230"><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
+          <svg class="b" style="--d:.2s" viewBox="0 0 120 230"><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
+          <svg class="b" style="--d:.3s" viewBox="0 0 120 230"><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
+          <svg class="b" style="--d:.4s" viewBox="0 0 120 230"><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
+          <svg class="b one" style="--d:.5s" viewBox="0 0 120 230"><circle class="ring" cx="60" cy="130" r="80"/><g class="p"><circle cx="60" cy="38" r="34"/><path d="M8 230 V128 a52 52 0 0 1 104 0 V230 Z"/></g></svg>
         </div>
-        <div class="big b" style="--d:1.6s"><span class="v num" data-count="14.16" data-dec="2">14.16</span><span class="u">ล้านคน · <span class="num" data-count="20.2" data-dec="1" data-suffix="%">20.2%</span></span></div>
-        <p class="lbl b" style="--d:1.8s">คนไทย 1 ใน 5 อายุ 60 ปีขึ้นไป<span class="en">One in five Thais is 60 or older.</span></p>
-        <p class="src b" style="--d:2s;margin-top:14px">สำนักงานสถิติแห่งชาติ · ข้อมูลปี 2567</p>
+        <div class="big b" style="--d:.7s"><span class="v num" data-count="14.16" data-dec="2">14.16</span><span class="u">ล้านคน · <span class="num" data-count="20.2" data-dec="1" data-suffix="%">20.2%</span></span></div>
+        <p class="lbl b" style="--d:.9s">คนไทย 1 ใน 5 อายุ 60 ปีขึ้นไป<span class="en">One in five Thais is 60 or older.</span></p>
+        <p class="src b" style="--d:1.1s;margin-top:14px">สำนักงานสถิติแห่งชาติ · ข้อมูลปี 2567</p>
       </div>
-      <div class="bars">
-        <p class="t b" style="--d:2.2s">หุ่นยนต์ฮิวแมนนอยด์ที่คาดว่าจะส่งมอบต่อปี<span class="en">Projected humanoid robot shipments per year</span></p>
-        <div class="row b" style="--d:2.4s"><span class="y">2569</span><div class="track"><span class="bar" style="--w:10px;--d:2.6s"></span><span class="val num" data-count="75000">75,000</span></div></div>
-        <div class="row b" style="--d:2.6s"><span class="y">2573</span><div class="track"><span class="bar" style="--w:110px;--d:2.9s"></span><span class="val num" data-count="890000">890,000</span></div></div>
-        <div class="row b" style="--d:2.8s"><span class="y">2578</span><div class="track"><span class="bar" style="--w:600px;--d:3.2s"></span><span class="val"><span class="num" data-count="6.5" data-dec="1">6.5</span> ล้าน</span></div></div>
-        <p class="src b" style="--d:3.4s">Goldman Sachs Research · ประมาณการ ก.ย. 2569 · ความยาวแท่งตามสัดส่วนจริง</p>
+      <div class="bars" data-step="4">
+        <p class="t b" style="--d:0s">หุ่นยนต์ฮิวแมนนอยด์ที่คาดว่าจะส่งมอบต่อปี<span class="en">Projected humanoid robot shipments per year</span></p>
+        <div class="row b" style="--d:.15s"><span class="y">2569</span><div class="track"><span class="bar" style="--w:10px;--d:.35s"></span><span class="val num" data-count="75000">75,000</span></div></div>
+        <div class="row b" style="--d:.3s"><span class="y">2573</span><div class="track"><span class="bar" style="--w:110px;--d:.65s"></span><span class="val num" data-count="890000">890,000</span></div></div>
+        <div class="row b" style="--d:.45s"><span class="y">2578</span><div class="track"><span class="bar" style="--w:600px;--d:.95s"></span><span class="val"><span class="num" data-count="6.5" data-dec="1">6.5</span> ล้าน</span></div></div>
+        <p class="src b" style="--d:1.2s">Goldman Sachs Research · ประมาณการ ก.ย. 2569 · ความยาวแท่งตามสัดส่วนจริง</p>
       </div>
     </div>
-    <div class="youth b" style="--d:4s">
+    <div class="youth" data-step="5">
       <div><p class="pre">หุ่นยนต์ซื้อได้ แต่สมองที่ดูแลคนไทย</p><p class="you">ต้องสร้างโดยคนรุ่นคุณ</p></div>
       <p class="inv">มาเรียนที่สำนักวิชาเทคโนโลยีดิจิทัลประยุกต์ มฟล.<br>แล้วสร้าง AI จากโจทย์จริงกับ ARIC<span class="en">Study with us. Build the brain with ARIC.</span></p>
     </div>
@@ -426,8 +440,10 @@ h1,h2{font-weight:700;letter-spacing:-.01em;line-height:1.18;text-wrap:balance}
 
   /* count-up numbers */
   const fmt = (v, dec) => v.toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec});
-  function countUp(slide){
-    slide.querySelectorAll('[data-count]').forEach(el => {
+  function countUp(root){
+    root.querySelectorAll('[data-count]').forEach(el => {
+      const st = el.closest('[data-step]'); if (st && !st.classList.contains('shown')) return;
+      const slide = el.closest('.slide');
       const to = parseFloat(el.dataset.count), dec = +(el.dataset.dec || 0), suf = el.dataset.suffix || '';
       if (reduce){ el.textContent = fmt(to, dec) + suf; return; }
       const host = el.closest('.b'); const delay = host ? parseFloat(getComputedStyle(host).getPropertyValue('--d')) * 1000 || 0 : 0;
@@ -443,7 +459,25 @@ h1,h2{font-weight:700;letter-spacing:-.01em;line-height:1.18;text-wrap:balance}
     });
   }
 
-  function go(i, replay){
+  /* click-to-reveal steps: elements with data-step="n" appear one click at a time */
+  const stepdots = document.createElement('div'); stepdots.className = 'stepdots'; stepdots.setAttribute('aria-hidden', 'true'); stage.appendChild(stepdots);
+  let step = 0;
+  const maxStep = s => Math.max(0, ...[...s.querySelectorAll('[data-step]')].map(e => +e.dataset.step));
+  function showStep(s, n){
+    step = n;
+    s.querySelectorAll('[data-step]').forEach(e => {
+      const k = +e.dataset.step, was = e.classList.contains('shown');
+      e.classList.toggle('shown', k <= n);
+      if (k <= n && !was) countUp(e);
+    });
+    s.classList.toggle('only1', n === 1 && maxStep(s) > 1);
+    const m = maxStep(s);
+    stepdots.innerHTML = m ? Array.from({length: m}, (_, k) => `<b class="${k < n ? 'on' : ''}"></b>`).join('') : '';
+  }
+  function next(){ const s = slides[cur], m = maxStep(s); if (m && step < m) showStep(s, step + 1); else go(cur + 1); }
+  function prev(){ const s = slides[cur]; if (maxStep(s) && step > 1) showStep(s, step - 1); else go(cur - 1, false, true); }
+
+  function go(i, replay, fromAhead){
     i = Math.max(0, Math.min(N - 1, i));
     if (i === cur && !replay) return;
     slides.forEach((s, k) => {
@@ -459,7 +493,9 @@ h1,h2{font-weight:700;letter-spacing:-.01em;line-height:1.18;text-wrap:balance}
     [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i));
     document.getElementById('pg').textContent = `${i + 1} / ${N}`;
     if (location.hash !== '#s' + (i + 1)) history.replaceState(null, '', '#s' + (i + 1));
+    s.querySelectorAll('[data-step]').forEach(e => e.classList.remove('shown'));
     countUp(s);
+    const m = maxStep(s); showStep(s, m ? (fromAhead && !replay ? m : 1) : 0);
     net.mode(i);
   }
 
@@ -504,8 +540,8 @@ h1,h2{font-weight:700;letter-spacing:-.01em;line-height:1.18;text-wrap:balance}
   })();
 
   /* navigation */
-  document.getElementById('next').onclick = () => go(cur + 1);
-  document.getElementById('prev').onclick = () => go(cur - 1);
+  document.getElementById('next').onclick = () => next();
+  document.getElementById('prev').onclick = () => prev();
   document.getElementById('replay').onclick = () => go(cur, true);
   document.getElementById('fs').onclick = () => {
     const d = document;
@@ -514,19 +550,19 @@ h1,h2{font-weight:700;letter-spacing:-.01em;line-height:1.18;text-wrap:balance}
   addEventListener('keydown', e => {
     if (e.target.closest && e.target.closest('button') && (e.key === ' ' || e.key === 'Enter')) return;
     const k = e.key;
-    if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(k)) { e.preventDefault(); go(cur + 1); }
-    else if (['ArrowLeft', 'PageUp', 'Backspace'].includes(k)) { e.preventDefault(); go(cur - 1); }
+    if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(k)) { e.preventDefault(); next(); }
+    else if (['ArrowLeft', 'PageUp', 'Backspace'].includes(k)) { e.preventDefault(); prev(); }
     else if (k === 'Home') go(0); else if (k === 'End') go(N - 1);
     else if (k === 'r' || k === 'R') go(cur, true);
     else if (k === 'f' || k === 'F') document.getElementById('fs').click();
   });
   document.getElementById('vp').addEventListener('click', e => {
     if (e.target.closest('.ctrl')) return;
-    e.clientX > innerWidth * .33 ? go(cur + 1) : go(cur - 1);
+    e.clientX > innerWidth * .33 ? next() : prev();
   });
   let sx = null;
   addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive: true});
-  addEventListener('touchend', e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) go(cur + (dx < 0 ? 1 : -1)); sx = null; });
+  addEventListener('touchend', e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) (dx < 0 ? next() : prev()); sx = null; });
 
   /* hide controls while presenting */
   const ctrl = document.getElementById('ctrl'); let idle;
